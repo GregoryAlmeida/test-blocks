@@ -1,9 +1,19 @@
+.div {
+  overflow: auto;
+  height: 100vh;
+  position: relative;
+}
+
 .main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+
+.main div {
+  position: relative;
 }
 
 .main header {
