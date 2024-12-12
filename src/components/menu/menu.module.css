@@ -1,4 +1,4 @@
-.main {
+.nav {
   margin-top: 3rem;
   display: flex;
   width: 100%;
@@ -15,7 +15,7 @@
 }
 
 @media (max-width: 40rem) {
-  .main {
+  .nav {
     margin-top: unset;
   }
 

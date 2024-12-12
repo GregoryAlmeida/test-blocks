@@ -5,10 +5,10 @@ import styles from './menu.module.css'
 
 export default function Menu() {
   return (
-    <main className={styles.main}>
+    <nav className={styles.nav}>
       <Link href='/'>
         <Image className={styles.img} src={LOGO} alt="Logo Blocks"/>
       </Link>
-    </main>
+    </nav>
   )
 }
