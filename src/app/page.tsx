@@ -57,8 +57,12 @@ export default function HomePage() {
           <div className={styles['div-families']}>
             {data.length === 0 ? <Loading /> :data.map(({id, details}) => (
               <div key={id} >
-                <Image src={FAMILIALOGO} alt={details.description} />     
-                <button>{details.name} <strong>| ↗</strong></button>
+                <Image src={FAMILIALOGO} alt={details.description} />    
+                <span>
+                  <button className={styles['button-1']} >{details.name}</button>
+                  <button className={styles['button-2']}><strong>↗</strong></button>
+                </span> 
+                 
               </div>
             ))}
           </div>
