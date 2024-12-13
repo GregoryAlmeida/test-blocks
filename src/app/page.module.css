@@ -112,6 +112,12 @@
   width: 100%;
 }
 
+.visible {
+  .footer {
+    margin: 0;
+  }
+}
+
 @media (max-width: 40rem) {
   .main header {
     padding: 1rem 1rem;
@@ -132,6 +138,12 @@
     gap: 1rem;
     height: auto;
     padding: 1rem;
-    margin-bottom: 10rem;
   }
+
+  .visible {
+    .footer {
+      margin-bottom: 15rem;
+    }
+  }
+
 }

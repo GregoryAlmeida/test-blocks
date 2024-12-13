@@ -19,19 +19,6 @@
 }
 
 .button {
-  /* all: unset;
-  color: var(--white);
-  display: flex;
-  padding: .5rem;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  border-width: 2px;
-  border-style: solid;
-  position: relative;
-  background: rgba(0, 0, 0, 0.1);
-  cursor: pointer; */
   border-width: 2px;
   border-style: solid;
   all: unset;
@@ -51,6 +38,7 @@
 }
 
 
+.button:active,
 .button:hover {
   background: black;
 }
@@ -66,9 +54,10 @@
 }
 
 .arrow {
-  border-left: 1px solid var(--gray);
-  text-align: center;
   width: 30px;
+  color: var(--white);
+  padding-left: .5rem;
+  border-left: 1px solid var(--gray);
 }
 
 .main .fechar {

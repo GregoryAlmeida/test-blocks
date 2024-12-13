@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'plugin-storage.nyc3.digitaloceanspaces.com',
+          port: '',
+        pathname: '/families/images/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
