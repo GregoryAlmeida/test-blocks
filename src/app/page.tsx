@@ -58,7 +58,7 @@ export default function HomePage() {
             {data.length === 0 ? <Loading /> :data.map(({id, details}) => (
               <div key={id} >
                 <Image src={FAMILIALOGO} alt={details.description} />     
-                <button>{details.name} | ↗</button>
+                <button>{details.name} <strong>| ↗</strong></button>
               </div>
             ))}
           </div>
