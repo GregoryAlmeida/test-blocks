@@ -29,19 +29,16 @@
   cursor: pointer;
 }
 
-.fechar {
+.main .fechar {
   display: none;
-  background-image: unset;
-  background-color: currentColor;
+  background-image: linear-gradient(to right, var(--black), var(--black));
   border: none;
+  font-size: 1rem;
 }
 
 @media (max-width: 40rem) {
-  .fechar {
+  .main .fechar {
     display: block;
-    background-image: unset;
-    background-color: var(--black);
-    border: none;
   }
 
   .main {

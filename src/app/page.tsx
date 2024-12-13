@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import { GET_API, IData } from '@/api/api';
 import Image from 'next/image';
 import FAMILIALOGO from '../../public/img-ilustrativa-familia.png'
-import Loading from './lodaing';
+import Loading from './loading';
 import Premium from '@/components/premium/premium';
 import Menu from '@/components/menu/menu';
 

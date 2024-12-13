@@ -117,12 +117,25 @@
 }
 
 @media (max-width: 40rem) {
+  .main header {
+    padding: 1rem 1rem;
+  }
+
+  .section {
+    width: 100%;
+    padding: .5rem;
+  }
+
+  .div-families {
+    gap: 1rem;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
     height: auto;
     padding: 1rem;
-    margin-bottom: 7.5rem;
+    margin-bottom: 10rem;
   }
 }
