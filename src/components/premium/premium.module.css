@@ -18,27 +18,71 @@
   color: var(--white);
 }
 
-.main button {
+.button {
+  /* all: unset;
   color: var(--white);
+  display: flex;
   padding: .5rem;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, var(--grad-right), var(--grad-left));
-  border-image: linear-gradient(to right, var(--grad-right), var(--grad-left));
-  border-width: 1px;
-  border-style: solid;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer; */
+  border-width: 2px;
+  border-style: solid;
+  all: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12rem;
+  position: relative;
+  padding: .5rem;
+  background: #000;
+  color: white;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+
+.button:hover {
+  background: black;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(to left, #d835c5, #a11cf3);
+  border-radius: 10px;
+
+}
+
+.arrow {
+  border-left: 1px solid var(--gray);
+  text-align: center;
+  width: 30px;
 }
 
 .main .fechar {
   display: none;
-  background-image: linear-gradient(to right, var(--black), var(--black));
+  background: linear-gradient(to right, var(--black), var(--black));
   border: none;
   font-size: 1rem;
+  color: var(--white);
 }
 
 @media (max-width: 40rem) {
   .main .fechar {
     display: block;
+    border: none;
   }
 
   .main {

@@ -7,7 +7,7 @@ export default function Premium() {
       <p>
         Não limite sua criatividade, junte-se a familia Blocks por apenas <strong>BRL 19,99</strong>
       </p>
-      <button>Quero ser Premium | ➡</button>
+      <button className={styles.button}><span>Quero ser Premium</span> <span className={styles.arrow}>➡</span></button>
     </main>
   )
 }

@@ -58,11 +58,10 @@ export default function HomePage() {
             {data.length === 0 ? <Loading /> :data.map(({id, details}) => (
               <div key={id} >
                 <Image src={FAMILIALOGO} alt={details.description} />    
-                <span>
-                  <button className={styles['button-1']} >{details.name}</button>
-                  <button className={styles['button-2']}><strong>↗</strong></button>
-                </span> 
-                 
+                 <button className={styles.button} >
+                  <span className={styles['span-familie']}>{details.name}</span>
+                  <span className={styles.arrow}><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"></path></svg></span>
+                </button>
               </div>
             ))}
           </div>

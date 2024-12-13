@@ -53,8 +53,6 @@
 }
 
 .div-families div {
-  display: flex;
-  flex-direction: column;
   width: 10rem;
   height: 15rem;
   text-align: center;
@@ -69,40 +67,38 @@
 
 }
 
-.div-families div span {
-  max-width: 100%;
-  height: 20%;
-  cursor: pointer;
-  border: none;
-  border-top: 2px solid var(--gray);
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+.button {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.div-families div span button {
-  padding: .5rem;
-  cursor: pointer;
-  height: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-}
-
-.button-1 {
-  width: 80%;
+  width: 100%;
+  height: 43px;
+  border: none;
   border-bottom-left-radius: 10px;
-  border: none;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid var(--gray);
+  cursor: pointer;
+  align-items: center;
+  background-color: var(--white);
 }
 
-.button-2 {
-  width: 20%;
-  border-bottom-right-radius: 10px;
-  border: none;
-  border-left: 1px solid var(--gray);
+.button span {
+  padding-left: .5rem;
+}
+
+.span-familie {
+  flex: 1 1 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: start;
+  font-weight: bold;
+}
+
+.arrow {
+  border-left: 2px solid var(--gray);
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .footer {
