@@ -1,11 +1,12 @@
 import styles from './premium.module.css';
 type Visible = {
   setVisible: () => void;
+  visible: boolean;
 };
 
-export default function Premium({ setVisible }: Visible) {
+export default function Premium({ setVisible, visible }: Visible) {
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} ${!visible ? styles.hidden : ''}`}>
       <button className={styles.fechar} onClick={setVisible} type="button">
         Fechar X
       </button>

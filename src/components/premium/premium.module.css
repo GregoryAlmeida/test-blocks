@@ -68,6 +68,11 @@
   color: var(--white);
 }
 
+
+.hidden {
+  display: flex;
+}
+
 @media (max-width: 40rem) {
   .main .fechar {
     display: block;
@@ -80,5 +85,9 @@
     top: unset;
     flex-direction: column;
     text-align: center;
+  }
+
+  .hidden {
+    display: none;
   }
 }

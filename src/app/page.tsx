@@ -3,10 +3,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './page.module.css';
 import { GET_API, IData } from '@/api/api';
 import Image from 'next/image';
-//import FAMILIALOGO from '../../public/img-ilustrativa-familia.png'
 import Loading from './loading';
 import Premium from '@/components/premium/premium';
 import Menu from '@/components/menu/menu';
+import Link from 'next/link';
 
 export default function HomePage() {
   const [data, setData] = useState<IData[]>([]);
@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.div} onScroll={handleScroll}>
-      {visible && <Premium setVisible={() => setVisible(false)} />}
+      <Premium visible={visible} setVisible={() => setVisible(false)} />
       <Menu />
       <main className={styles.main}>
         <header>
@@ -68,7 +68,7 @@ export default function HomePage() {
                     height={100}
                     alt={details.description}
                   />
-                  <button className={styles.button}>
+                  <Link href={`/products/${id}`} className={styles.button}>
                     <span className={styles['span-familie']}>
                       {details.name}
                     </span>
@@ -86,13 +86,13 @@ export default function HomePage() {
                         <path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"></path>
                       </svg>
                     </span>
-                  </button>
+                  </Link>
                 </div>
               ))
             )}
           </div>
         </section>
-        <footer className={`${styles.footer} ${visible && styles.visible}`}>
+        <footer className={`${styles.footer} ${visible ? styles.visible : ''}`}>
           <p>Sobre</p>
           <p>FAQ</p>
           <p>Termos de uso</p>
