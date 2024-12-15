@@ -1,12 +1,11 @@
 'use client';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, /*useRef,*/ useState } from 'react';
 import styles from './page.module.css';
 import { GET_API, IData } from '@/api/api';
 import Image from 'next/image';
 import Loading from './loading';
 import Premium from '@/components/premium/premium';
 import Menu from '@/components/menu/menu';
-import Link from 'next/link';
 
 export default function HomePage() {
   const [data, setData] = useState<IData[]>([]);
@@ -14,7 +13,7 @@ export default function HomePage() {
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const debounce = useRef<number>(undefined);
+  //const debounce = useRef<number>(undefined);
 
   const handleAPI = useCallback(async (final: boolean, page: number) => {
     if (final) return;
@@ -38,8 +37,9 @@ export default function HomePage() {
     const maxScrollDown = target.scrollHeight - target.clientHeight;
 
     if (scrollPosition === maxScrollDown) {
-      clearTimeout(debounce.current);
-      debounce.current = window.setTimeout(() => handleAPI(final, page), 100);
+      handleAPI(final, page);
+      // clearTimeout(debounce.current);
+      // debounce.current = window.setTimeout(() => handleAPI(final, page), 100);
     }
   };
 
@@ -68,7 +68,7 @@ export default function HomePage() {
                     height={100}
                     alt={details.description}
                   />
-                  <Link href={`/products/${id}`} className={styles.button}>
+                  <button className={styles.button}>
                     <span className={styles['span-familie']}>
                       {details.name}
                     </span>
@@ -86,7 +86,7 @@ export default function HomePage() {
                         <path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"></path>
                       </svg>
                     </span>
-                  </Link>
+                  </button>
                 </div>
               ))
             )}
