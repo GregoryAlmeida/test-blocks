@@ -15,7 +15,7 @@ export default function HomePage() {
 
   const handleAPI = useCallback(async (final: boolean, page: number) => {
     if (final) return;
-    const response = await GET_API(page * 16, 16);
+    const response = await GET_API(page * 30, 30);
     if (response.length === 0) {
       setFinal(true);
     } else {
