@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, /*useRef,*/ useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './page.module.css';
 import { GET_API, IData } from '@/api/api';
 import Image from 'next/image';
@@ -13,7 +13,7 @@ export default function HomePage() {
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  //const debounce = useRef<number>(undefined);
+  const debounce = useRef<number>(undefined);
 
   const handleAPI = useCallback(async (final: boolean, page: number) => {
     if (final) return;
@@ -35,11 +35,10 @@ export default function HomePage() {
 
     const scrollPosition = target.scrollTop;
     const maxScrollDown = target.scrollHeight - target.clientHeight;
-
+    console.log(scrollPosition, maxScrollDown);
     if (scrollPosition === maxScrollDown) {
-      handleAPI(final, page);
-      // clearTimeout(debounce.current);
-      // debounce.current = window.setTimeout(() => handleAPI(final, page), 100);
+      clearTimeout(debounce.current);
+      debounce.current = window.setTimeout(() => handleAPI(final, page), 100);
     }
   };
 
