@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, /*useRef,*/ useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './page.module.css';
 import { GET_API, IData } from '@/api/api';
 import Image from 'next/image';
@@ -13,11 +13,9 @@ export default function HomePage() {
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  //const debounce = useRef<number>(undefined);
-
   const handleAPI = useCallback(async (final: boolean, page: number) => {
     if (final) return;
-    const response = await GET_API(page * 15, 15);
+    const response = await GET_API(page * 16, 16);
     if (response.length === 0) {
       setFinal(true);
     } else {
@@ -44,19 +42,8 @@ export default function HomePage() {
     }
   }, []);
 
-  // const handleScroll = (event: React.UIEvent<HTMLDivElement, UIEvent>) => {
-  //   const target = event.currentTarget;
-
-  //    const scrollPosition = target.scrollTop;
-  //    const maxScrollDown = target.scrollHeight - target.clientHeight;
-  //    if (scrollPosition === maxScrollDown) {
-  //      clearTimeout(debounce.current);
-  //     debounce.current = window.setTimeout(() => handleAPI(final, page), 100);
-  //    }
-  // };
-
   return (
-    <div className={styles.div} /*onScroll={handleScroll}*/>
+    <div className={styles.div}>
       <Premium visible={visible} setVisible={() => setVisible(false)} />
       <Menu />
       <main className={styles.main}>
