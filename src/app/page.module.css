@@ -93,6 +93,7 @@
   text-overflow: ellipsis;
   text-align: start;
   font-weight: bold;
+  color: var(--black);
 }
 
 .arrow {
